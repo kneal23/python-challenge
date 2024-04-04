@@ -146,4 +146,29 @@ print("Date:", max_decrease_date)
 print("Amount:", max_decrease)
 
 
+#Write to new CSV file and output language
+output_file = 'PyBank_analysis.csv'
+# Write to the new CSV file
+with open(output_file, 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(["Total Months", "Total", "Change in profit over the entire period", "Average change in profit", "The greatest increase in profits",
+                    "Data", "Amount", "The greatest decrease in profits", "Date", "Amount"])
+
+
+
+
+# Add a txt file and pen a text file in write mode
+with open('output.txt', 'w') as f:
+    print(f"Total Months: {len(month)}", file=f)
+    print(f"Total: {net_total}", file=f)
+    print(f"Change in profit over the entire period: {sum(profit_changes)}", file=f)
+    print(f"Average change in profit: {rounded_number}", file=f)
+    print("The greatest increase in profits:", file=f)
+    print(f"Date: {max_increase_date}", file=f)
+    print(f"Amount: {max_increase}", file=f)
+    print("The greatest decrease in profits:", file=f)
+    print(f"Date: {max_decrease_date}", file=f)
+    print(f"Amount: {max_decrease}", file=f)
+
+
 #We did it! Help from ChatGPT and getting the flow of things. 
