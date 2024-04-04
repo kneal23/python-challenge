@@ -146,3 +146,4 @@ print("Date:", max_decrease_date)
 print("Amount:", max_decrease)
 
 
+#We did it! Help from ChatGPT and getting the flow of things. 
