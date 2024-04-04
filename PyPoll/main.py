@@ -115,3 +115,26 @@ else:
 
 # Print the winner and the message
 print(f"{winner} {message}")
+
+
+
+#Write to new CSV file and output language
+output_file = 'PyPoll_analysis.csv'
+# Write to the new CSV file
+with open(output_file, 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(["Total Months", "Total", "Change in profit over the entire period", "Average change in profit", "The greatest increase in profits",
+                    "Data", "Amount", "The greatest decrease in profits", "Date", "Amount"])
+
+
+
+
+# Add a txt file and pen a text file in write mode
+with open('output.txt', 'w') as f:
+    print(f"Total Votes: {len(votes)}", file=f)
+    for candidate, votes in candidate_votes.items():
+        print(f"{candidate}: {votes}", file=f)
+    for candidate, votes in candidate_votes.items():
+        percentage = (votes / total_votes) * 100
+        print(f"{candidate}: {percentage:.2f}%", file=f)
+    print(f"{winner} {message}", file=f)
